@@ -7,23 +7,55 @@
         </div>
         <div class="col-5 offset-1">
           <ul class="text-primary nav">
-            <li><router-link to="/" class="raleway">Home</router-link></li>
             <li>
-              <a href="https://dirhamcrypto.io/whitepaper.pdf" class="raleway"
-                >Resource</a
-              >
+              <a href="/" @click="location.reload()" class="raleway">Home</a>
+            </li>
+            <li>
+              <v-menu dark open-on-hover down offset-x>
+                <template v-slot:activator="{ on, attrs }">
+                  <a class="raleway" v-bind="attrs" v-on="on"> Resurce </a>
+                </template>
+
+                <v-list>
+                  <v-list-item>
+                    <v-list-item-title
+                      ><a
+                        class="raleway"
+                        href="https://dirhamcrypto.io/whitepaper.pdf"
+                        >whaite paper</a
+                      ></v-list-item-title
+                    >
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-title
+                      ><router-link
+                        onclick="window.location.reload(true)"
+                        to="/faq"
+                        target=""
+                        class="raleway"
+                        >FAQ</router-link
+                      ></v-list-item-title
+                    >
+                  </v-list-item>
+                </v-list>
+              </v-menu>
             </li>
             <li><a href="#" class="raleway">News</a></li>
             <li>
-              <router-link to="/aboutus" class="raleway">About us</router-link>
+              <router-link
+                onclick="window.location.reload(true)"
+                to="/about"
+                target=""
+                class="raleway"
+                >About</router-link
+              >
             </li>
           </ul>
         </div>
       </div>
     </div>
     <div class="background">
-      <router-view></router-view>
-
+      <router-view />
       <div class="footer pt-10">
         <v-row>
           <v-col class="offset-1" cols="2">
@@ -52,11 +84,7 @@
             <h6 class="primary--text">RESOURCES</h6>
             <ul>
               <li>
-                <a
-                  class="white--text"
-                  href="https://dirhamcrypto.io/whitepaper.pdf"
-                  >Whitepaper</a
-                >
+                <a class="white--text" href="/whitepaper.pdf">Whitepaper</a>
               </li>
             </ul>
           </v-col>

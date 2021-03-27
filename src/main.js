@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify';
+
 import VueFullPage from 'vue-fullpage.js'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 

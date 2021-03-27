@@ -324,8 +324,10 @@
           </v-col>
           <v-col cols="4">
             <h5 class="white--text text-body-1">
-              Drachma is a decentralized autonomous organization (DAO) with the
-              mission to create stablecoins with Dirham as its first product.
+              Drachma is a decentralized autonomous organization aiming to
+              create Stablecoins and has already created Dirham as the first
+              creation. All activities and decisions are made by the DAO
+              members. Anyone who holds Dor can contribute to Drachma DAO.
             </h5>
           </v-col>
         </v-row>
