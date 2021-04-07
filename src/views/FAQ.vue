@@ -21,8 +21,8 @@
           <v-list-item-group v-model="group">
             <v-list-item style="background-color: black">
               <v-list-item-title class="text-center"
-                ><a href="/" @click="location.reload()" class="raleway"
-                  >Home</a
+                ><router-link to="/"  class="raleway"
+                  >Home</router-link
                 ></v-list-item-title
               >
             </v-list-item>
@@ -40,7 +40,6 @@
             <v-list-item style="background-color: black">
               <v-list-item-title class="text-center"
                 ><router-link
-                  onclick="window.location.reload(true)"
                   to="/faq"
                   target=""
                   class="raleway"
@@ -58,7 +57,6 @@
               <v-list-item-title class="text-center"
                 >
                 <router-link
-                  onclick="window.location.reload(true)"
                   to="/about"
                   target=""
                   class="raleway"

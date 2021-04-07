@@ -8,7 +8,7 @@
         <div class="col-5 offset-1">
           <ul class="text-primary nav">
             <li>
-              <a href="/" @click="location.reload()" class="raleway">Home</a>
+              <router-link to="/" class="raleway">Home</router-link>
             </li>
             <li>
               <v-menu dark open-on-hover down >
@@ -29,7 +29,7 @@
                   <v-list-item>
                     <v-list-item-title
                       ><router-link
-                        onclick="window.location.reload(true)"
+                        
                         to="/faq"
                         target=""
                         class="raleway"
@@ -43,7 +43,7 @@
             <li><a href="#" class="raleway">News</a></li>
             <li>
               <router-link
-                onclick="window.location.reload(true)"
+                
                 to="/about"
                 target=""
                 class="raleway"
