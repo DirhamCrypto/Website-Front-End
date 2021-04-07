@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div id="menu">
+    <div id="menu" class="d-md-flex d-none">
       <div class="row pt-2 align-items-center">
         <div class="col-2 offset-1">
           <v-img src="./assets/logo.png" alt="" max-width="200"></v-img>
@@ -11,7 +11,7 @@
               <a href="/" @click="location.reload()" class="raleway">Home</a>
             </li>
             <li>
-              <v-menu dark open-on-hover down offset-x>
+              <v-menu dark open-on-hover down >
                 <template v-slot:activator="{ on, attrs }">
                   <a class="raleway" v-bind="attrs" v-on="on"> Resurce </a>
                 </template>
@@ -22,7 +22,7 @@
                       ><a
                         class="raleway"
                         href="https://dirhamcrypto.io/whitepaper.pdf"
-                        >whaite paper</a
+                        >white paper</a
                       ></v-list-item-title
                     >
                   </v-list-item>
@@ -56,42 +56,56 @@
     </div>
     <div class="background">
       <router-view />
-      <div class="footer pt-10">
+      <div class="pt-10" :class="screenSize ? 'footer' : 'mobFooter'">
         <v-row>
-          <v-col class="offset-1" cols="2">
+          <v-col class="offset-1" md="2" cols="10">
             <v-img width="200" src="./assets/footer/logotype.png"></v-img>
           </v-col>
-          <v-col class="offset-1" cols="2">
+          <v-col class="offset-1" md="2" cols="10">
             <h6 class="primary--text">CONNECT</h6>
             <ul>
               <li>
-                <a class="white--text" target="blank" @click="sendEmail"
+                <a class="primary--text" target="blank" @click="sendEmail"
                   >Contact Us</a
                 >
               </li>
               <!-- <li><a class="white--text" href="">Media Contact</a></li> -->
               <li>
-                <a class="white--text" href="https://twiiter.com/DirhamCrypto"
-                  >Twitter</a
-                >
+                <a href="https://twitter.com/DirhamCrypto">Twitter</a>
               </li>
               <!-- <li><a class="white--text" href="">Facebook</a></li> -->
               <!-- <li><a class="white--text" href="">Telegram</a></li> -->
               <!-- <li><a class="white--text" href="">LinkedIn</a></li> -->
             </ul>
           </v-col>
-          <v-col cols="2">
+          <v-col class="offset-1 offset-md-0" md="2" cols="10">
             <h6 class="primary--text">RESOURCES</h6>
             <ul>
               <li>
-                <a class="white--text" href="/whitepaper.pdf">Whitepaper</a>
+                <a class="" href="/whitepaper.pdf">Whitepaper</a>
+              </li>
+              <li>
+                <router-link
+                  onclick="window.location.reload(true)"
+                  to="/faq"
+                  target=""
+                  class="raleway"
+                  >FAQ
+                </router-link>
               </li>
             </ul>
           </v-col>
-          <v-col cols="2">
+          <v-col class="offset-1 offset-md-0" md="2" cols="10">
             <h6 class="primary--text">ABOUT</h6>
             <ul>
-              <li><router-link to="/aboutus">About us</router-link></li>
+              <li>
+                <router-link
+                  onclick="window.location.reload(true)"
+                  to="/about"
+                  target=""
+                  >About</router-link
+                >
+              </li>
             </ul>
           </v-col>
         </v-row>
@@ -111,7 +125,24 @@ export default {
   // },
 
   data() {
-    return {};
+    return {
+      drawer: false,
+      group: null,
+      screenSize: true,
+    };
+  },
+  methods: {
+    sendEmail() {
+      window.open("mailto:test@example.com");
+    },
+  },
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
+  created() {
+    this.screenSize = window.screen.width > 960;
   },
 };
 </script>
@@ -180,6 +211,10 @@ body {
 .exchange-item {
   height: 100%;
 }
+.mobfooter {
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 500px;
+}
 
 .footer {
   background-color: rgba(255, 255, 255, 0.2);
@@ -237,6 +272,11 @@ body {
 .footer {
   background-color: rgba(26, 29, 36, 0.75);
   height: 200px;
+  overflow: hidden;
+}
+.mobFooter {
+  background-color: rgba(26, 29, 36, 0.75);
+
   overflow: hidden;
 }
 </style>

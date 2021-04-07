@@ -1,33 +1,164 @@
 <template>
-  <div class="aboutus">
-    <v-row class="pt-15"></v-row>
-    <v-row class="pt-15 my-5" justify="center">
-      <h5 class="white--text">About us</h5>
-    </v-row>
-    <v-row>
-      <v-col class="offset-2" cols="4">
-        <p class="text-justify white--text tenorsans">
-          Dirham Crypto is tasked with setting up DrachmaDAO consisted of Tech
-          enthusiasts and financial experts to drive the organization and make
-          it grow toward the more adoption of the international AED market by
-          developing and supporting a stablecoin called Dirham. We believe
-          people all around the world have to be able to decide for their own
-          financial situation freely and safely. As you may know, AED has been a
-          successfully adopted fiat currency by the observation of Great United
-          Arab Emirates and we truly believe we can help it grow bigger in the
-          international modern markets using Blockchain innovation and DeFi.
-        </p>
-      </v-col>
-      <v-col align-self="center" cols="3" class="offset-1">
-        <v-img width="70%" src="../assets/aboutus/men.png"></v-img>
-      </v-col>
-    </v-row>
+  <div class="aboutus overflow-hidden">
+    <div class="d-md-none">
+      <v-card
+      
+        :height="[drawer ? screenHeigth : 70]"
+        class="d-md-none"
+        style="background: none; box-shadow: none"
+      >
+        <v-app-bar color="secondary" dark>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      </v-app-bar>
+
+      <v-navigation-drawer
+        style="background-color: #dbb637"
+        v-model="drawer"
+        absolute
+        bottom
+        temporary
+      >
+        <v-list nav dense>
+          <v-list-item-group v-model="group">
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><a href="/" @click="location.reload()" class="raleway"
+                  >Home</a
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><a
+                  class="raleway"
+                  href="https://dirhamcrypto.io/whitepaper.pdf"
+                  >white paper</a
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><router-link
+                  onclick="window.location.reload(true)"
+                  to="/faq"
+                  target=""
+                  class="raleway"
+                  >FAQ</router-link
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><a href="#" class="raleway">News</a></v-list-item-title
+              >
+            </v-list-item>
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                >
+                <router-link
+                  onclick="window.location.reload(true)"
+                  to="/about"
+                  target=""
+                  class="raleway"
+                  >About us</router-link
+                >
+                </v-list-item-title
+              >
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
+
+       
+      </v-card>
+    </div>
+    <div class="d-md-none">
+      
+          <v-row  class="text-center" >
+            <v-col>
+          <h3 class="white--text">About us</h3>
+          </v-col>
+          </v-row>
+          <v-row  justify="center">
+            <v-col cols="9">
+              <v-img width="100%" src="../assets/aboutus/men.png"></v-img>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="10" class="offset-1">
+              <p class="text-justify white--text tenorsans">
+                Dirham Crypto is tasked with setting up DrachmaDAO consisted of Tech
+                enthusiasts and financial experts to drive the organization and make
+                it grow toward the more adoption of the international AED market by
+                developing and supporting a stablecoin called Dirham. We believe
+                people all around the world have to be able to decide for their own
+                financial situation freely and safely. As you may know, AED has been a
+                successfully adopted fiat currency by the observation of Great United
+                Arab Emirates and we truly believe we can help it grow bigger in the
+                international modern markets using Blockchain innovation and DeFi.
+              </p>
+            </v-col>
+          </v-row>
+         
+    </div>
+    <v-responsive :min-height="screenHeigth-200" class="d-none d-md-flex">
+      <v-row class="pt-15  d-md-flex d-none"></v-row>
+      <v-row class="pt-15 my-5  d-md-flex d-none" justify="center">
+        <h5 class="white--text">About us</h5>
+      </v-row>
+      <v-row >
+        <v-col class="offset-md-2 offset-1" md="4" cols="10">
+          <p class="text-justify white--text tenorsans">
+            Dirham Crypto is tasked with setting up DrachmaDAO consisted of Tech
+            enthusiasts and financial experts to drive the organization and make
+            it grow toward the more adoption of the international AED market by
+            developing and supporting a stablecoin called Dirham. We believe
+            people all around the world have to be able to decide for their own
+            financial situation freely and safely. As you may know, AED has been a
+            successfully adopted fiat currency by the observation of Great United
+            Arab Emirates and we truly believe we can help it grow bigger in the
+            international modern markets using Blockchain innovation and DeFi.
+          </p>
+        </v-col>
+        <v-col align-self="center" cols="3" class="offset-1 d-none d-md-flex">
+          <v-img max-width="70%" src="../assets/aboutus/men.png"></v-img>
+        </v-col>
+      </v-row>
+    </v-responsive>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      screenSize: false,
+      screenHeigth: 0,
+      drawer: false,
+      group: null,
+    };
+  },
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
+  created() {
+    this.screenSize = window.screen.width > 960;
+
+    this.screenHeigth = window.innerHeight;
+  },
+  updated(){
+    this.screenHeigth = window.innerHeight;
+  }
+};
+</script>
 <style scoped>
 .aboutus {
-  height: 80vh;
+  
   background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,

@@ -1,6 +1,424 @@
 <template>
-  <div class="home mt-15">
-    <full-page ref="fullpage" :options="options" id="fullpage">
+  <div class="home mt-md-15">
+    <v-card
+      :height="screenHeigth"
+      class="d-md-none"
+      style="background: none; box-shadow: none"
+    >
+      <v-app-bar color="secondary" dark>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      </v-app-bar>
+
+      <v-navigation-drawer
+        style="background-color: #dbb637"
+        v-model="drawer"
+        absolute
+        bottom
+        temporary
+      >
+        <v-list nav dense>
+          <v-list-item-group v-model="group">
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><a href="/" @click="location.reload()" class="raleway"
+                  >Home</a
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><a
+                  class="raleway"
+                  href="https://dirhamcrypto.io/whitepaper.pdf"
+                  >white paper</a
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><router-link
+                  onclick="window.location.reload(true)"
+                  to="/faq"
+                  target=""
+                  class="raleway"
+                  >FAQ</router-link
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><a href="#" class="raleway">News</a></v-list-item-title
+              >
+            </v-list-item>
+            <v-list-item style="background-color: black">
+              <v-list-item-title class="text-center"
+                >
+                <router-link
+                  onclick="window.location.reload(true)"
+                  to="/about"
+                  target=""
+                  class="raleway"
+                  >About us</router-link
+                >
+                </v-list-item-title
+              >
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
+
+      <v-card-text>
+        <v-row class="pt-15" justify="center">
+          <div>
+            <v-img class="text-center" src="../assets/p1/logo.png" width="150">
+            </v-img>
+          </div>
+        </v-row>
+        <v-row align="center">
+          <v-col>
+            <h1 class="white--text">
+              <p>
+                <span
+                  class="text-subtitle-1 mr-2 kanit"
+                  style="font-family: 'Kanit', sans-serif !important"
+                  >The</span
+                >
+                <span
+                  class="text-h4 mr-2"
+                  style="font-family: 'Kanit', sans-serif !important"
+                  >Rise</span
+                >
+                <span
+                  style="font-family: 'Kanit', sans-serif !important"
+                  class="text-subtitle-1 mr-2 kanit"
+                  >Of</span
+                >
+                <span
+                  style="font-family: 'Kanit', sans-serif !important"
+                  class="text-h4 mr-2 kanit"
+                  >Bonds</span
+                >
+                <span
+                  style="font-family: 'Kanit', sans-serif !important"
+                  class="text-subtitle-1 kanit"
+                  >In</span
+                >
+              </p>
+              <p class="pl-15">
+                <span
+                  style="font-family: 'Kanit', sans-serif !important"
+                  class="text-subtitle-1 ml-10 mr-2 kanit"
+                  >The</span
+                >
+                <span
+                  style="font-family: 'Kanit', sans-serif !important"
+                  class="text-h4 mr-2 kanit"
+                  >BlockChain</span
+                >
+              </p>
+              <p class="text-right">
+                <span
+                  style="font-family: 'Kanit', sans-serif !important"
+                  class="white--text kanit"
+                  >World</span
+                >
+              </p>
+            </h1>
+          </v-col>
+        </v-row>
+        <v-row class="mt-4" justify="center">
+          <v-col class="text-center" cols="8">
+            <v-btn
+              @click="addToWallet(dirhamAddress, 'DHS')"
+              width="100%"
+              class="page_one_btn kanit"
+              >Add Dirham to wallet</v-btn
+            >
+          </v-col>
+        </v-row>
+      </v-card-text>
+    </v-card>
+
+    <div class="d-md-none overflow-hidden section_gray pr-1">
+      <v-row class="pt-15" justify="center">
+        <div>
+          <v-row class="" justify="center">
+            <div>
+              <v-img
+                class="text-center"
+                src="../assets/p2/coins.png"
+                width="100"
+              >
+              </v-img>
+            </div>
+          </v-row>
+        </div>
+      </v-row>
+      <v-row>
+        <v-col class="offset-1" cols="10">
+          <p class="white--text mt-15 tenorsans">
+            A Dirham crypto bond is equivalent to one million UAE Dirhams (AED),
+            which is in turn equal to 272294.07 US Dollars (USD). The bonds are
+            initially only traded by Drachma DAO brokers in a number of
+            countries around the world.
+          </p>
+          <p class="white--text tenorsans">
+            Each bond is divisible by one million Dirham coins and is always
+            equal to $0.2722 US. They can be easily traded on various exchanges
+            like Uniswap.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p3/transparency.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Transparency</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            The mutual fund's capital inflow is announced transparently every
+            day.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p3/Secure&reliable.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Secure & reliable</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            Dirham crypto is a blockchain-based platform, making it safe,
+            transparent and immutable.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p3/InclusiveandSimplified.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Inclusive and Simplified</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            The mutual fund's capital inflow is announced transparently every
+            day.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p3/Censorship-resistant.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Censorship-resistant</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            Dirham crypto complies with international standards and regulations
+            while providing highly secure monetary transactions for the
+            consumers. Unlike some stable coins e.g. Tether, the privacy policy
+            designed by the co-founders disables creating black-lists or
+            endangering ownership rights.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p3/Investmentinterest.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Investment interest</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            Dirham crypto is currently the only stablecoin that distributes the
+            revenues of bonds sale and other investments among Dirham holders on
+            a weekly basis.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p3/Digitalcash.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Digital cash</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            Dirham crypto turns cash into digital divisible, and easily tradable
+            repo bonds. Divisibility enables Dirham crypto to equalize its units
+            to AED to satisfy the global demand for this universal currency for
+            international trade.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="pt-15 mb-5" justify="center">
+        <v-col class="offset-1" cols="10">
+          <h4 class="white--text text-h6">
+            Dirham is mainly used by the following three communities:
+          </h4>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img class="text-center" src="../assets/p4/Traders.png" width="50">
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Traders</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            Traders use it as a stablecoin to exchange their daily trades and
+            earn profits periodically. There is no fund-freezing or similar
+            limitation like Tether or other stablecoins.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p4/Individuals.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Individuals</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            Dirham adoption enables individuals to use it as a payment method
+            and earn weekly profits.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p4/Merchants.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Merchants</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            Businessmen use Dirham for unlimited, lower-fee and faster
+            international transactions.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="my-10" justify="center">
+        <div>
+          <v-img
+            class="text-center"
+            src="../assets/p4/bondholder.png"
+            width="50"
+          >
+          </v-img>
+        </div>
+        <h6 class="primary--text text-h6">Bond Holders</h6>
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            The main advantage of Dirham Crypto bonds over other bonds is the
+            divisibility and simplicity in transfer. This feature enables banks
+            and investment companies to use our bonds more efficiently.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row class="mt-15" justify="center">
+        <div>
+          <v-img class="text-center" src="../assets/p5/dorlogo.png" width="250">
+          </v-img>
+        </div>
+
+        <v-col cols="10" class="offset-1">
+          <p class="white--text mt-5">
+            Drachma is a decentralized autonomous organization aiming to create
+            Stablecoins and has already created Dirham as the first creation.
+            All activities and decisions are made by the DAO members. Anyone who
+            holds Dor can contribute to Drachma DAO.
+          </p>
+        </v-col>
+      </v-row>
+      <v-row class="" justify="center">
+        <v-col class="text-center" cols="8">
+          <v-btn
+            @click="addToWallet(dorAddress, 'DOR')"
+            class="page_one_btn"
+            width="100%"
+            >Add Dor to wallet</v-btn
+          >
+        </v-col>
+      </v-row>
+      <v-row class="pt-15">
+        <v-col cols="10" class="offset-1">
+          <h4 class="white--text">You can also EXCHANGE with these...</h4>
+        </v-col>
+      </v-row>
+      <v-row class="mt-5" justify="center">
+        <div class="mb-10">
+          <a href="https://app.uniswap.org/#/swap" target="_blank">
+            <v-img width="200" class="hexgon" src="../assets/p6/hexagon.svg">
+              <div>
+                <v-img
+                  class="childpic"
+                  width="100"
+                  src="../assets/p6/uniswap.png"
+                ></v-img>
+              </div>
+            </v-img>
+          </a>
+        </div>
+      </v-row>
+    </div>
+
+    <full-page
+      v-if="screenSize"
+      class="d-none d-md-block"
+      ref="fullpage"
+      :options="options"
+      id="fullpage"
+    >
       <div class="section">
         <v-row align="center" class="pt-15">
           <v-col align-self="center" cols="5" class="offset-md-1">
@@ -90,9 +508,9 @@
               </div>
             </v-row>
             <v-row class="mt-10" justify="center">
-              <v-col class="text-center" cols="5">
+              <!-- <v-col class="text-center" cols="5">
                 <v-btn width="100%" class="page_one_btn kanit">Donate</v-btn>
-              </v-col>
+              </v-col> -->
             </v-row>
             <v-row class="my-n4" justify="center">
               <v-col class="text-center" cols="5">
@@ -100,7 +518,7 @@
                   @click="addToWallet(dirhamAddress, 'DHS')"
                   width="100%"
                   class="page_one_btn kanit"
-                  >Add Dirham to web3 wallet</v-btn
+                  >Add Dirham to wallet</v-btn
                 >
               </v-col>
             </v-row>
@@ -337,7 +755,7 @@
               @click="addToWallet(dorAddress, 'DOR')"
               class="page_one_btn"
               width="100%"
-              >Add Dor to web3 wallet</v-btn
+              >Add Dor to wallet</v-btn
             >
           </v-col>
         </v-row>
@@ -345,7 +763,9 @@
       <div class="section section_gray endpage">
         <v-row class="pt-15"></v-row>
         <v-row class="pt-15" justify="center">
-          <h4 class="white--text">You can also EXCHANGE with these...</h4>
+          <h4 class="white--text">
+            You can also EXCHANGE with these... {{ screenSize }}
+          </h4>
         </v-row>
         <v-row class="mt-5" justify="center">
           <div class="mb-10">
@@ -363,7 +783,7 @@
           </div>
         </v-row>
 
-        <div class="footer">
+        <div v-if="screenSize" class="footer">
           <v-row>
             <v-col class="offset-1" cols="2">
               <v-img width="200" src="../assets/footer/logotype.png"></v-img>
@@ -372,15 +792,13 @@
               <h6 class="primary--text">CONNECT</h6>
               <ul>
                 <li>
-                  <a class="white--text" target="blank" @click="sendEmail"
+                  <a class="primary--text" target="blank" @click="sendEmail"
                     >Contact Us</a
                   >
                 </li>
                 <!-- <li><a class="white--text" href="">Media Contact</a></li> -->
                 <li>
-                  <a class="white--text" href="https://twiiter.com/DirhamCrypto"
-                    >Twitter</a
-                  >
+                  <a href="https://twitter.com/DirhamCrypto">Twitter</a>
                 </li>
                 <!-- <li><a class="white--text" href="">Facebook</a></li> -->
                 <!-- <li><a class="white--text" href="">Telegram</a></li> -->
@@ -391,14 +809,30 @@
               <h6 class="primary--text">RESOURCES</h6>
               <ul>
                 <li>
-                  <a class="white--text" href="/whitepaper.pdf">Whitepaper</a>
+                  <a class="" href="/whitepaper.pdf">Whitepaper</a>
+                </li>
+                <li>
+                  <router-link
+                    onclick="window.location.reload(true)"
+                    to="/faq"
+                    target=""
+                    class="raleway"
+                    >FAQ
+                  </router-link>
                 </li>
               </ul>
             </v-col>
             <v-col cols="2">
               <h6 class="primary--text">ABOUT</h6>
               <ul>
-                <li><router-link to="/aboutus">About us</router-link></li>
+                <li>
+                  <router-link
+                    onclick="window.location.reload(true)"
+                    to="/about"
+                    target=""
+                    >About</router-link
+                  >
+                </li>
               </ul>
             </v-col>
           </v-row>
@@ -414,9 +848,18 @@ const Web3 = require("web3");
 
 export default {
   name: "Home",
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
 
   data() {
     return {
+      screenSize: false,
+      screenHeigth: 0,
+      drawer: false,
+      group: null,
       dirhamAddress: "0x30365ed4ca8173013ad948b9842f34ac71d01f7c",
       dorAddress: "0x53608f7258671fe607151e7df5efaf96e130f937",
       options: {
@@ -435,6 +878,11 @@ export default {
         // sectionsColor: ["#41b883", "#ff5f45", "#0798ec"],
       },
     };
+  },
+  created() {
+    this.screenSize = window.screen.width > 960;
+
+    this.screenHeigth = window.screen.height;
   },
   methods: {
     sendEmail: {
@@ -530,7 +978,7 @@ body {
   background-image: url("https://cdn.vuetifyjs.com/images/parallax/material.jpg");
 }
 .background {
-  background-image: url("../assets/back.jpg");
+  background-image: url("../assets/back.jpg") !important;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -654,8 +1102,20 @@ body {
   position: absolute;
   bottom: 0px;
 }
+.mobFooter {
+  background-color: rgba(26, 29, 36, 1);
+  height: 200px;
+  width: 100%;
+  padding-top: 15px;
+  position: absolute;
+  bottom: 0px;
+}
 .endpage {
   position: relative;
+}
+.hidden_card {
+  background-color: none !important;
+  box-shadow: none;
 }
 </style>
 
