@@ -63,7 +63,7 @@
                   to="/about"
                   target=""
                   class="raleway"
-                  >About us</router-link
+                  >About Us</router-link
                 >
                 </v-list-item-title
               >
@@ -79,7 +79,7 @@
       
           <v-row  class="text-center" >
             <v-col>
-          <h3 class="white--text">About us</h3>
+          <h3 class="white--text">About Us</h3>
           </v-col>
           </v-row>
           <v-row  justify="center">
@@ -107,7 +107,7 @@
     <v-responsive :min-height="screenHeigth-200" class="d-none d-md-flex">
       <v-row class="pt-15  d-md-flex d-none"></v-row>
       <v-row class="pt-15 my-5  d-md-flex d-none" justify="center">
-        <h5 class="white--text">About us</h5>
+        <h5 class="white--text">About Us</h5>
       </v-row>
       <v-row >
         <v-col class="offset-md-2 offset-1" md="4" cols="10">

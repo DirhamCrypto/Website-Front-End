@@ -61,7 +61,7 @@
                   to="/about"
                   target=""
                   class="raleway"
-                  >About us</router-link
+                  >About Us</router-link
                 >
                 </v-list-item-title
               >
@@ -420,6 +420,7 @@
       id="fullpage"
     >
       <div class="section">
+        
         <v-row align="center" class="pt-15">
           <v-col align-self="center" cols="5" class="offset-md-1">
             <v-row class="pt-15">
@@ -589,8 +590,7 @@
                 Inclusive and Simplified
               </h6>
               <p class="white--text mt-5">
-                The mutual fund's capital inflow is announced transparently
-                every day.
+                Our brokers in all corners of the world transform your assets securely to simply transferable repo bonds guaranteed to be bought back.
               </p>
             </v-row>
           </v-col>
@@ -764,13 +764,13 @@
         <v-row class="pt-15"></v-row>
         <v-row class="pt-15" justify="center">
           <h4 class="white--text">
-            You can also EXCHANGE with these... {{ screenSize }}
+            You can also EXCHANGE with these...
           </h4>
         </v-row>
         <v-row class="mt-5" justify="center">
           <div class="mb-10">
             <a href="https://app.uniswap.org/#/swap" target="_blank">
-              <v-img width="200" class="hexgon" src="../assets/p6/hexagon.svg">
+              <v-img width="200" class="hexgon" src="hexagon.svg">
                 <div>
                   <v-img
                     class="childpic"
@@ -813,10 +813,9 @@
                 </li>
                 <li>
                   <router-link
-                    onclick="window.location.reload(true)"
                     to="/faq"
                     target=""
-                    class="raleway"
+                    
                     >FAQ
                   </router-link>
                 </li>
@@ -827,10 +826,9 @@
               <ul>
                 <li>
                   <router-link
-                    onclick="window.location.reload(true)"
                     to="/about"
                     target=""
-                    >About</router-link
+                    >About Us</router-link
                   >
                 </li>
               </ul>

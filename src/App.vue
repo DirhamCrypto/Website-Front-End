@@ -47,7 +47,7 @@
                 to="/about"
                 target=""
                 class="raleway"
-                >About</router-link
+                >About Us</router-link
               >
             </li>
           </ul>
@@ -65,9 +65,7 @@
             <h6 class="primary--text">CONNECT</h6>
             <ul>
               <li>
-                <a class="primary--text" target="blank" @click="sendEmail"
-                  >Contact Us</a
-                >
+                <a href="mailto:info@dirhamcrypto.io">Contact Us</a>
               </li>
               <!-- <li><a class="white--text" href="">Media Contact</a></li> -->
               <li>
@@ -86,10 +84,8 @@
               </li>
               <li>
                 <router-link
-                  onclick="window.location.reload(true)"
                   to="/faq"
                   target=""
-                  class="raleway"
                   >FAQ
                 </router-link>
               </li>
@@ -100,10 +96,9 @@
             <ul>
               <li>
                 <router-link
-                  onclick="window.location.reload(true)"
                   to="/about"
                   target=""
-                  >About</router-link
+                  >About Us</router-link
                 >
               </li>
             </ul>
