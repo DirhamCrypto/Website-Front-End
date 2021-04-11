@@ -420,10 +420,12 @@
       id="fullpage"
     >
       <div class="section">
-        
-        <v-row align="center" class="pt-15">
+        <v-container class="pb-15 mt-n10" fluid fill-height style="max-width:100%;">
+          
+
+        <v-row align="center" >
           <v-col align-self="center" cols="5" class="offset-md-1">
-            <v-row class="pt-15">
+            <v-row >
               <h1 class="white--text">
                 <p>
                   <span
@@ -525,8 +527,11 @@
             </v-row>
           </v-col>
         </v-row>
+        </v-container>
+
       </div>
       <div class="section section_p2">
+        <v-container class="pb-15 mt-n10" fluid fill-height style="max-width:100%;">
         <v-row class="pt-15">
           <v-col cols="2" class="offset-3">
             <div>
@@ -547,123 +552,168 @@
             </p>
           </v-col>
         </v-row>
+        </v-container>
       </div>
 
       <div class="section section_gray">
-        <v-row class="pt-15 text-caption">
-          <v-col class="offset-1" cols="3">
-            <v-row align="center">
-              <div>
-                <v-img width="50" src="../assets/p3/transparency.png"></v-img>
-              </div>
-              <h6 class="primary--text text-h6 mx-2">Transparency</h6>
-              <p class="white--text mt-5">
-                The mutual fund's capital inflow is announced transparently
-                every day.
-              </p>
-            </v-row>
-          </v-col>
-          <v-col class="ml-10" cols="3">
-            <v-row align="center">
-              <div>
-                <v-img
-                  width="50"
-                  src="../assets/p3/Secure&reliable.png"
-                ></v-img>
-              </div>
-              <h6 class="primary--text text-h6 mx-2">Secure & reliable</h6>
-              <p class="white--text mt-5">
-                Dirham crypto is a blockchain-based platform, making it safe,
-                transparent and immutable.
-              </p>
-            </v-row>
-          </v-col>
-          <v-col class="ml-10" cols="3">
-            <v-row align="center">
-              <div>
-                <v-img
-                  width="50"
-                  src="../assets/p3/InclusiveandSimplified.png"
-                ></v-img>
-              </div>
-              <h6 class="primary--text text-h6 mx-2">
-                Inclusive and Simplified
-              </h6>
-              <p class="white--text mt-5">
-                Our brokers in all corners of the world transform your assets securely to simply transferable repo bonds guaranteed to be bought back.
-              </p>
-            </v-row>
-          </v-col>
-        </v-row>
-        <v-row class="text-caption mt-5">
-          <v-col class="offset-1" cols="3">
-            <v-row align="center">
-              <div>
-                <v-img width="50" src="../assets/p3/Governance.png"></v-img>
-              </div>
-              <h6 class="primary--text text-h6 mx-2">Governance</h6>
-              <p class="white--text mt-5">
-                Dirham crypto is run by a decentralized organization made of
-                Dirham holders. The DAO managers cannot issue bonds unless
-                enough funding inflow is ensured in the mutual fund.
-              </p>
-            </v-row>
-          </v-col>
-          <v-col class="ml-10" cols="3">
-            <v-row align="center">
-              <div>
-                <v-img
-                  width="50"
-                  src="../assets/p3/Censorship-resistant.png"
-                ></v-img>
-              </div>
-              <h6 class="primary--text text-h6 mx-2">Censorship-resistant</h6>
-              <p class="white--text mt-5">
-                Dirham crypto complies with international standards and
-                regulations while providing highly secure monetary transactions
-                for the consumers. Unlike some stable coins e.g. Tether, the
-                privacy policy designed by the co-founders disables creating
-                black-lists or endangering ownership rights.
-              </p>
-            </v-row>
-          </v-col>
-          <v-col class="ml-10" cols="3">
-            <v-row align="center">
-              <div>
-                <v-img
-                  width="50"
-                  src="../assets/p3/Investmentinterest.png"
-                ></v-img>
-              </div>
-              <h6 class="primary--text text-h6 mx-2">Investment interest</h6>
-              <p class="white--text mt-5">
-                Dirham crypto is currently the only stablecoin that distributes
-                the revenues of bonds sale and other investments among Dirham
-                holders on a weekly basis.
-              </p>
-            </v-row>
-          </v-col>
-        </v-row>
-        <v-row class="text-caption">
-          <v-col class="offset-1" cols="3">
-            <v-row align="center">
-              <div>
-                <v-img width="50" src="../assets/p3/Digitalcash.png"></v-img>
-              </div>
-              <h6 class="primary--text text-h6 mx-2 mt-4">Digital cash</h6>
-              <p class="white--text mt-5">
-                Dirham crypto turns cash into digital divisible, and easily
-                tradable repo bonds. Divisibility enables Dirham crypto to
-                equalize its units to AED to satisfy the global demand for this
-                universal currency for international trade.
-              </p>
-            </v-row>
-          </v-col>
-        </v-row>
+        <v-container class="pb-15 mt-n10" fluid fill-height style="max-width:100%;">
+          <v-row class="pt-15 text-caption">
+            <v-col class="offset-1" cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img width="50" src="../assets/p3/transparency.png"></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2">Transparency</h6>
+                <p class="white--text mt-5">
+                  The mutual fund's capital inflow is announced transparently
+                  every day.
+                </p>
+              </v-row>
+            </v-col>
+            <v-col class="ml-10" cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img
+                    width="50"
+                    src="../assets/p3/Secure&reliable.png"
+                  ></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2">Secure & reliable</h6>
+                <p class="white--text mt-5">
+                  Dirham crypto is a blockchain-based platform, making it safe,
+                  transparent and immutable.
+                </p>
+              </v-row>
+            </v-col>
+            <v-col class="ml-10" cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img
+                    width="50"
+                    src="../assets/p3/InclusiveandSimplified.png"
+                  ></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2">
+                  Inclusive and Simplified
+                </h6>
+                <p class="white--text mt-5">
+                  Our brokers in all corners of the world transform your assets securely to simply transferable repo bonds guaranteed to be bought back.
+                </p>
+              </v-row>
+            </v-col>
+          </v-row>
+          <v-row class="text-caption mt-5">
+            <v-col class="offset-1" cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img width="50" src="../assets/p3/Governance.png"></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2">Governance</h6>
+                <p class="white--text mt-5">
+                  Dirham crypto is run by a decentralized organization made of
+                  Dirham holders. The DAO managers cannot issue bonds unless
+                  enough funding inflow is ensured in the mutual fund.
+                </p>
+              </v-row>
+            </v-col>
+            <v-col class="ml-10" cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img
+                    width="50"
+                    src="../assets/p3/Censorship-resistant.png"
+                  ></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2">Censorship-resistant</h6>
+                <p class="white--text mt-5">
+                  Dirham crypto complies with international standards and
+                  regulations while providing highly secure monetary transactions
+                  for the consumers. Unlike some stable coins e.g. Tether, the
+                  privacy policy designed by the co-founders disables creating
+                  black-lists or endangering ownership rights.
+                </p>
+              </v-row>
+            </v-col>
+            <v-col class="ml-10" cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img
+                    width="50"
+                    src="../assets/p3/Investmentinterest.png"
+                  ></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2">Investment interest</h6>
+                <p class="white--text mt-5">
+                  Dirham crypto is currently the only stablecoin that distributes
+                  the revenues of bonds sale and other investments among Dirham
+                  holders on a weekly basis.
+                </p>
+              </v-row>
+            </v-col>
+          </v-row>
+          <v-row class="text-caption">
+            <v-col class="offset-1" cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img width="50" src="../assets/p3/Digitalcash.png"></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2 mt-4">Digital cash</h6>
+                <p class="white--text mt-5">
+                  Dirham crypto turns cash into digital divisible, and easily
+                  tradable repo bonds. Divisibility enables Dirham crypto to
+                  equalize its units to AED to satisfy the global demand for this
+                  universal currency for international trade.
+                </p>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
       </div>
       <div class="section section_gray">
-        <v-row></v-row>
-        <v-row class="pt-15 mb-15" justify="center">
+        
+        <v-container  fluid fill-height style="max-width:100%;">
+          <v-row class="mt-15" align="start" justify="center">
+            <h4 class="white--text">Dashboard</h4>
+          </v-row>
+          <v-row align="start">
+            <v-col class="offset-1" cols="5">
+              <v-row>
+                <v-col cols="6">
+                  <p class="text-justify font2rem white--text tenorsans">Max Total Suply:</p>
+                  <p class="text-justify font2rem white--text tenorsans">Repo Bonds Size:</p>
+                  <p class="text-justify font2rem white--text tenorsans">Market Overview:</p>
+                </v-col>
+                <v-col class="offset-1" cols="5">
+                  <p class=" white--text font2rem tenorsans"> 10,000,000 DHS</p>
+                  <p class=" white--text font2rem tenorsans"> 1,000,000 DHS</p>
+                  <p class=" white--text font2rem tenorsans"> 3.6 DHS</p>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col class="offset-1" cols="3">
+              <v-row>
+                <v-col cols="9">
+                  <p class="white--text font2rem tenorsans">Circulating Supply:</p> 
+                </v-col>
+                <v-col cols="3">
+                  <p class="text-right white--text font2rem tenorsans">55%</p>
+
+                </v-col>
+              </v-row>
+              <v-img src="../assets/p4/55.png"></v-img>
+            </v-col>
+
+          </v-row>
+          <v-row>
+            <v-col class="offset-1" cols="3">
+              <v-btn class="font2rem" height="110%" color="primary" outlined>1USDT = 3.6 DIRHAM</v-btn>  
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
+      <div class="section section_gray">
+        <v-container class="pb-15 mt-n10" fluid fill-height style="max-width:100%;">
+        <v-row  justify="center">
           <h4 class="white--text text-h6">
             Dirham is mainly used by the following three communities:
           </h4>
@@ -731,9 +781,10 @@
             </v-row>
           </v-col>
         </v-row>
+        </v-container>
       </div>
       <div class="section section_gray">
-        <v-row class="py-10"></v-row>
+        <v-container class="pb-15 mt-n10" fluid fill-height style="max-width:100%;">
         <v-row class="pt-15" justify="space-around">
           <v-col cols="3">
             <div>
@@ -759,6 +810,7 @@
             >
           </v-col>
         </v-row>
+        </v-container>
       </div>
       <div class="section section_gray endpage">
         <v-row class="pt-15"></v-row>
@@ -792,7 +844,7 @@
               <h6 class="primary--text">CONNECT</h6>
               <ul>
                 <li>
-                  <a class="primary--text" target="blank" @click="sendEmail"
+                  <a class="primary--text" href="mailto:info@dirhamcrypto.io"
                     >Contact Us</a
                   >
                 </li>
@@ -1114,6 +1166,9 @@ body {
 .hidden_card {
   background-color: none !important;
   box-shadow: none;
+}
+.font2rem{
+  font-size: 2rem !important;
 }
 </style>
 
