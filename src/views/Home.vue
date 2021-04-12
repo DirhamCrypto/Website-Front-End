@@ -287,6 +287,28 @@
         </v-col>
       </v-row>
 
+      <v-row class="pt-15" justify="center">
+        <h4 class="white--text text-h7">Dashboard</h4>
+      </v-row>
+      <v-row justify="center">
+        <p class="tenorsans white--text">Max Total Suply: 10,000,000 DHS</p>
+        <p class="tenorsans white--text">Repo Bonds Size: 1,000,000 DHS</p>
+        <p class="tenorsans white--text">Market Overview: 3.6 DHS</p>
+      </v-row>
+      <v-row class="mt-8" justify="center">
+        <p class="tenorsans white--text">Circulating Supply: 55%</p>
+      </v-row>
+      <v-row>
+        <v-col class="offset-2" cols="8">
+          <v-img src="../assets/p4/55.png"></v-img>
+        </v-col>
+      </v-row>
+      <v-row class="mt-10">
+        <v-col offset="2" cols="8">
+          <v-btn width="100%" outlined color="primary">1 USDT = 3.6 DHS</v-btn>
+        </v-col>
+      </v-row>
+
       <v-row class="pt-15 mb-5" justify="center">
         <v-col class="offset-1" cols="10">
           <h4 class="white--text text-h6">
@@ -677,15 +699,27 @@
           </v-row>
           <v-row align="start">
             <v-col class="offset-1" cols="5">
-              <v-row>
+              <v-row align="center">
                 <v-col cols="6">
                   <p class="text-justify font2rem white--text tenorsans">Max Total Suply:</p>
+                </v-col>
+                <v-col cols="5">
+                  <p class=" white--text font2rem tenorsans"> 10,000,000 DHS</p>
+                </v-col>
+              </v-row>
+              <v-row align="center">
+                <v-col cols="6">
                   <p class="text-justify font2rem white--text tenorsans">Repo Bonds Size:</p>
+                </v-col>
+                <v-col cols="5">
+                  <p class=" white--text font2rem tenorsans"> 1,000,000 DHS</p>
+                </v-col>
+              </v-row>
+              <v-row align="center">
+                <v-col cols="6">
                   <p class="text-justify font2rem white--text tenorsans">Market Overview:</p>
                 </v-col>
-                <v-col class="offset-1" cols="5">
-                  <p class=" white--text font2rem tenorsans"> 10,000,000 DHS</p>
-                  <p class=" white--text font2rem tenorsans"> 1,000,000 DHS</p>
+                <v-col cols="5">
                   <p class=" white--text font2rem tenorsans"> 3.6 DHS</p>
                 </v-col>
               </v-row>
@@ -1168,7 +1202,7 @@ body {
   box-shadow: none;
 }
 .font2rem{
-  font-size: 2rem !important;
+  font-size: 1.5rem !important;
 }
 </style>
 
