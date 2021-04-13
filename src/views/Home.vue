@@ -422,6 +422,9 @@
       </v-row>
       <v-row class="" justify="center">
         <v-col class="text-center" cols="8">
+          <v-btn class="my-5" outlined color="primary">
+              1 Dor = 0.098 USDT
+            </v-btn>
           <v-btn
             @click="addToWallet(dorAddress, 'DOR')"
             class="page_one_btn"
@@ -847,7 +850,11 @@
           </v-col>
         </v-row>
         <v-row class="pt-15 mt-10" justify="center">
-          <v-col cols="3">
+          <v-col cols="3" class="text-center">
+          
+            <v-btn class="my-5" outlined color="primary">
+              1 Dor = 0.098 USDT
+            </v-btn>
             <v-btn
               @click="addToWallet(dorAddress, 'DOR')"
               class="page_one_btn"
