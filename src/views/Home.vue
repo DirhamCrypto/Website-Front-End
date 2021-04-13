@@ -291,21 +291,39 @@
         <h4 class="white--text text-h7">Dashboard</h4>
       </v-row>
       <v-row justify="center">
-        <p class="tenorsans white--text">Max Total Suply: 10,000,000 DHS</p>
-        <p class="tenorsans white--text">Repo Bonds Size: 1,000,000 DHS</p>
-        <p class="tenorsans white--text">Market Overview: 3.6 DHS</p>
+        
+          <v-img  max-width="50%" src="../assets/p4/balance.png"></v-img>
+        
       </v-row>
-      <v-row class="mt-8" justify="center">
-        <p class="tenorsans white--text">Circulating Supply: 55%</p>
-      </v-row>
-      <v-row>
-        <v-col class="offset-2" cols="8">
-          <v-img src="../assets/p4/55.png"></v-img>
-        </v-col>
-      </v-row>
-      <v-row class="mt-10">
-        <v-col offset="2" cols="8">
-          <v-btn width="100%" outlined color="primary">1 USDT = 3.6 DHS</v-btn>
+      <v-row justify="center">
+        <v-col class="offset-1" cols="8">
+
+          <v-text-field
+            dark
+            outlined
+            readonly
+            label="Total bonds issued"
+            value="10"
+          >
+          </v-text-field>
+          <v-text-field
+            dark
+            outlined
+            readonly
+            label="Price of a bond"
+            value="1,000,000 DHS"
+          ></v-text-field>
+          <v-text-field
+            dark
+            outlined
+            readonly
+            label="Market cap"
+            value="10,000,000 DHS"
+          ></v-text-field>
+          <v-btn min-height="70" width="100%" outlined color="primary" dark  class=" my-4"> DHS: 0.2722 USD</v-btn>
+            
+          <v-btn min-height="70" width="100%" outlined color="primary" dark class=" my-4"> 3.6725 DHS = 1 USD</v-btn>
+
         </v-col>
       </v-row>
 
@@ -420,7 +438,7 @@
       <v-row class="mt-5" justify="center">
         <div class="mb-10">
           <a href="https://app.uniswap.org/#/swap" target="_blank">
-            <v-img width="200" class="hexgon" src="../assets/p6/hexagon.svg">
+            <v-img width="200" class="hexgon" src="../assets/p6/hexagonal.png">
               <div>
                 <v-img
                   class="childpic"
@@ -693,56 +711,50 @@
       </div>
       <div class="section section_gray">
         
-        <v-container  fluid fill-height style="max-width:100%;">
-          <v-row class="mt-15" align="start" justify="center">
-            <h4 class="white--text">Dashboard</h4>
-          </v-row>
-          <v-row align="start">
-            <v-col class="offset-1" cols="5">
-              <v-row align="center">
-                <v-col cols="6">
-                  <p class="text-justify font2rem white--text tenorsans">Max Total Suply:</p>
-                </v-col>
-                <v-col cols="5">
-                  <p class=" white--text font2rem tenorsans"> 10,000,000 DHS</p>
-                </v-col>
-              </v-row>
-              <v-row align="center">
-                <v-col cols="6">
-                  <p class="text-justify font2rem white--text tenorsans">Repo Bonds Size:</p>
-                </v-col>
-                <v-col cols="5">
-                  <p class=" white--text font2rem tenorsans"> 1,000,000 DHS</p>
-                </v-col>
-              </v-row>
-              <v-row align="center">
-                <v-col cols="6">
-                  <p class="text-justify font2rem white--text tenorsans">Market Overview:</p>
-                </v-col>
-                <v-col cols="5">
-                  <p class=" white--text font2rem tenorsans"> 3.6 DHS</p>
-                </v-col>
+        <v-container  fluid fill-height style="max-width:100%; align-items: normal;">
+          
+          <v-row dark align="center">
+            <v-col cols="2" class="offset-1">
+              <v-text-field
+                class="font2rem"
+                dark
+                outlined
+                readonly
+                label="Total bonds issued"
+                value="10"
+              ></v-text-field>
+              <v-text-field
+                class="font2rem"
+                dark
+                outlined
+                readonly
+                label="Price of a bond"
+                value="1,000,000 DHS"
+              ></v-text-field>
+              <v-text-field
+                class="font2rem"
+                dark
+                outlined
+                readonly
+                label="Market cap"
+                value="10,000,000 DHS"
+              ></v-text-field>
+            </v-col>
+            <v-col cols="6" class="text-center" align-self="center">
+              
+              <v-row justify="center">
+                <v-img  max-width="30%" src="../assets/p4/balance.png"></v-img>
               </v-row>
             </v-col>
-            <v-col class="offset-1" cols="3">
-              <v-row>
-                <v-col cols="9">
-                  <p class="white--text font2rem tenorsans">Circulating Supply:</p> 
-                </v-col>
-                <v-col cols="3">
-                  <p class="text-right white--text font2rem tenorsans">55%</p>
-
-                </v-col>
-              </v-row>
-              <v-img src="../assets/p4/55.png"></v-img>
-            </v-col>
-
-          </v-row>
-          <v-row>
-            <v-col class="offset-1" cols="3">
-              <v-btn class="font2rem" height="110%" color="primary" outlined>1USDT = 3.6 DIRHAM</v-btn>  
+          
+          
+            <v-col cols="2">
+              <v-btn min-height="70" width="100%" outlined color="primary" dark  class="font2rem my-4"> DHS: 0.2722 USD</v-btn>
+            
+              <v-btn min-height="70" width="100%" outlined color="primary" dark class="font2rem my-4"> 3.6725 DHS = 1 USD</v-btn>
             </v-col>
           </v-row>
+          
         </v-container>
       </div>
       <div class="section section_gray">
@@ -856,7 +868,7 @@
         <v-row class="mt-5" justify="center">
           <div class="mb-10">
             <a href="https://app.uniswap.org/#/swap" target="_blank">
-              <v-img width="200" class="hexgon" src="hexagon.svg">
+              <v-img width="200" class="hexgon" src="../assets/p6/hexagonal.png">
                 <div>
                   <v-img
                     class="childpic"
@@ -969,11 +981,8 @@ export default {
     this.screenHeigth = window.screen.height;
   },
   methods: {
-    sendEmail: {
-      function() {
-        window.open("info@dirhamcrypto.com");
-      },
-    },
+    
+    
     addToWallet: function (address, iSymbol) {
       var web3;
       const ethereum = window.ethereum;
@@ -1202,7 +1211,7 @@ body {
   box-shadow: none;
 }
 .font2rem{
-  font-size: 1.5rem !important;
+  font-size: 1vw !important;
 }
 </style>
 

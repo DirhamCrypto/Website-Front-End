@@ -126,11 +126,7 @@ export default {
       screenSize: true,
     };
   },
-  methods: {
-    sendEmail() {
-      window.open("mailto:test@example.com");
-    },
-  },
+  
   watch: {
     group() {
       this.drawer = false;
