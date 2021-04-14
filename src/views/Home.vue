@@ -891,7 +891,7 @@
         <div v-if="screenSize" class="footer">
           <v-row>
             <v-col class="offset-1" cols="2">
-              <v-img width="200" src="../assets/footer/logotype.png"></v-img>
+              <v-img width="200" :src="require('../assets/footer/logotype.png')"></v-img>
             </v-col>
             <v-col class="offset-1" cols="2">
               <h6 class="primary--text">CONNECT</h6>
@@ -1219,6 +1219,9 @@ body {
 }
 .font2rem{
   font-size: 1vw !important;
+}
+li{
+  color: white;
 }
 </style>
 
