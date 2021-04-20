@@ -8,21 +8,31 @@
         <div class="col-5 offset-1">
           <ul class="text-primary nav">
             <li>
-              <router-link to="/" class="raleway">Home</router-link>
+              <router-link to="/" class="raleway text-subtitle-1">Home</router-link>
             </li>
             <li>
               <v-menu dark open-on-hover down >
                 <template v-slot:activator="{ on, attrs }">
-                  <a class="raleway" v-bind="attrs" v-on="on"> Resurce </a>
+                  <a class="raleway text-subtitle-1" v-bind="attrs" v-on="on"> Resurce </a>
                 </template>
 
                 <v-list>
                   <v-list-item>
                     <v-list-item-title
                       ><a
-                        class="raleway"
+                        class="raleway text-subtitle-1"
+                        target="_blank"
+                        href="https://github.com/DirhamCrypto"
+                        > <v-icon>mdi-github</v-icon> Github</a
+                      ></v-list-item-title
+                    >
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-title
+                      ><a
+                        class="raleway text-subtitle-1"
                         href="https://dirhamcrypto.io/whitepaper.pdf"
-                        >white paper</a
+                        >Whitepaper</a
                       ></v-list-item-title
                     >
                   </v-list-item>
@@ -32,23 +42,28 @@
                         
                         to="/faq"
                         target=""
-                        class="raleway"
+                        class="raleway text-subtitle-1"
                         >FAQ</router-link
                       ></v-list-item-title
                     >
                   </v-list-item>
+                  
                 </v-list>
               </v-menu>
             </li>
-            <li><a href="#" class="raleway">News</a></li>
             <li>
               <router-link
                 
                 to="/about"
                 target=""
-                class="raleway"
+                class="raleway text-subtitle-1"
                 >About Us</router-link
               >
+            </li>
+            <li>
+              <a class="gary--text" href="https://etherscan.io/token/0x30365ed4ca8173013ad948b9842f34ac71d01f7c?a=0xd141c76ed0c9e4676a9c14ed1d525864c22ce894" target="_blank" >
+                <v-icon color="primary">mdi-ethereum</v-icon> Etherscan
+              </a>
             </li>
           </ul>
         </div>
@@ -69,7 +84,7 @@
               </li>
               <!-- <li><a class="white--text" href="">Media Contact</a></li> -->
               <li>
-                <a href="https://twitter.com/DirhamCrypto">Twitter</a>
+                <a target="_blank" href="https://twitter.com/DirhamCrypto">Twitter</a>
               </li>
               <!-- <li><a class="white--text" href="">Facebook</a></li> -->
               <!-- <li><a class="white--text" href="">Telegram</a></li> -->
@@ -88,6 +103,11 @@
                   target=""
                   >FAQ
                 </router-link>
+              </li>
+              <li>
+                <a href="https://github.com/DirhamCrypto" target="_blank">
+                  <v-icon color="primary">mdi-github</v-icon> Github
+                </a>
               </li>
             </ul>
           </v-col>

@@ -48,11 +48,7 @@
               >
             </v-list-item>
 
-            <v-list-item style="background-color: black">
-              <v-list-item-title class="text-center"
-                ><a href="#" class="raleway">News</a></v-list-item-title
-              >
-            </v-list-item>
+            
             <v-list-item style="background-color: black">
               <v-list-item-title class="text-center"
                 >
@@ -709,6 +705,28 @@
                 </p>
               </v-row>
             </v-col>
+            <v-col class="ml-10"  cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img width="50" src="../assets/p3/stable.png"></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2 mt-4">Stable</h6>
+                <p class="white--text mt-5">
+                  Dirham is backed by a reserve of Fiat money which is invested in certain investment Funds. That is why its rate is always stable.
+                </p>
+              </v-row>
+            </v-col>
+            <v-col class="ml-10" cols="3">
+              <v-row align="center">
+                <div>
+                  <v-img width="50" src="../assets/p3/fast.png"></v-img>
+                </div>
+                <h6 class="primary--text text-h6 mx-2 mt-4">Fast</h6>
+                <p class="white--text mt-5">
+                  Regardless of amount or destination, Dirham transactions are incredibly fast.
+                </p>
+              </v-row>
+            </v-col>
           </v-row>
         </v-container>
       </div>
@@ -742,6 +760,15 @@
                 label="Market cap"
                 value="10,000,000 DHS"
               ></v-text-field>
+              <v-text-field
+                class="font2rem"
+                dark
+                outlined
+                readonly
+                label="Amount of distributed profit"
+                value="7,542 DHS"
+              ></v-text-field>
+              
             </v-col>
             <v-col cols="6" class="text-center" align-self="center">
               
@@ -851,8 +878,10 @@
         </v-row>
         <v-row class="pt-15 mt-10" justify="center">
           <v-col cols="3" class="text-center">
-          
-            <v-btn class="my-5" outlined color="primary">
+            <v-btn target="_blank" href="https://etherscan.io/token/0x53608f7258671fe607151e7df5efaf96e130f937?a=0xf7ea77dc3e7b259ceaea1e6e9fefad9d0093a42f" class="mx-3" icon>
+              <v-icon large color="white">mdi-ethereum</v-icon>
+            </v-btn>
+            <v-btn class="my-5 mx-3" outlined color="primary">
               1 Dor = 0.098 USDT
             </v-btn>
             <v-btn
@@ -875,15 +904,15 @@
         <v-row class="mt-5" justify="center">
           <div class="mb-10">
             <a href="https://app.uniswap.org/#/swap" target="_blank">
-              <v-img width="200" class="hexgon" src="../assets/p6/hexagonal.png">
-                <div>
+              <div width="200" class="hexgon" >
+                
                   <v-img
                     class="childpic"
                     width="100"
                     src="../assets/p6/uniswap.png"
                   ></v-img>
-                </div>
-              </v-img>
+              </div>
+                
             </a>
           </div>
         </v-row>
@@ -903,7 +932,7 @@
                 </li>
                 <!-- <li><a class="white--text" href="">Media Contact</a></li> -->
                 <li>
-                  <a href="https://twitter.com/DirhamCrypto">Twitter</a>
+                  <a target="_blank" href="https://twitter.com/DirhamCrypto">Twitter</a>
                 </li>
                 <!-- <li><a class="white--text" href="">Facebook</a></li> -->
                 <!-- <li><a class="white--text" href="">Telegram</a></li> -->
@@ -924,6 +953,11 @@
                     >FAQ
                   </router-link>
                 </li>
+                <li>
+                <a href="https://github.com/DirhamCrypto" target="_blank">
+                  <v-icon color="primary">mdi-github</v-icon> Github
+                </a>
+              </li>
               </ul>
             </v-col>
             <v-col cols="2">
@@ -1186,13 +1220,26 @@ body {
   );
 }
 .hexgon {
+  background-image: url('../assets/p6/hexagonal.png');
+  width: 200px;
+  height: 200px;
   opacity: 50%;
   position: relative !important;
+  top: 0;
+  left: 0;
+  background-position: center;
+    background-size: cover; 
 }
 .childpic {
   position: absolute !important;
-  right: 50px !important;
-  bottom: 50px !important;
+  width: 100px;
+  height: 100px;
+  left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: auto;
 }
 .footer {
   background-color: rgba(26, 29, 36, 0.75);

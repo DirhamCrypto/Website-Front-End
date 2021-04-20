@@ -50,11 +50,7 @@
               >
             </v-list-item>
 
-            <v-list-item style="background-color: black">
-              <v-list-item-title class="text-center"
-                ><a href="#" class="raleway">News</a></v-list-item-title
-              >
-            </v-list-item>
+            
             <v-list-item style="background-color: black">
               <v-list-item-title class="text-center"
                 >
