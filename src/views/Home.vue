@@ -905,14 +905,12 @@
           <div class="mb-10">
             <a href="https://app.uniswap.org/#/swap" target="_blank">
               <div width="200" class="hexgon" >
-                
                   <v-img
                     class="childpic"
                     width="100"
                     src="../assets/p6/uniswap.png"
                   ></v-img>
-              </div>
-                
+              </div>    
             </a>
           </div>
         </v-row>
@@ -933,6 +931,9 @@
                 <!-- <li><a class="white--text" href="">Media Contact</a></li> -->
                 <li>
                   <a target="_blank" href="https://twitter.com/DirhamCrypto">Twitter</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://t.me/joinchat/TKDdLuLWsBBIYmE0">Telegram</a>
                 </li>
                 <!-- <li><a class="white--text" href="">Facebook</a></li> -->
                 <!-- <li><a class="white--text" href="">Telegram</a></li> -->
@@ -1066,7 +1067,7 @@ export default {
             console.log("This is an unknown network.");
         }
         if (network.toLowerCase() !== net.toLowerCase()) {
-          alert("Please connect to " + net + " network your on on " + network);
+          alert("Please connect to " + net + " network, your current network is " + network);
           return false;
         } else {
           try {
