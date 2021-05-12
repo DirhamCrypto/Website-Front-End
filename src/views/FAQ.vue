@@ -1,73 +1,6 @@
 <template>
   <div  class="faq">
-    <div  class="d-md-none">
-      <v-card
-        :height="[drawer ? screenHeigth : 70]"
-        class="d-md-none"
-        style="background: none; box-shadow: none"
-      >
-        <v-app-bar color="secondary" dark>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      </v-app-bar>
-
-      <v-navigation-drawer
-        style="background-color: #dbb637"
-        v-model="drawer"
-        absolute
-        bottom
-        temporary
-      >
-        <v-list nav dense>
-          <v-list-item-group v-model="group">
-            <v-list-item style="background-color: black">
-              <v-list-item-title class="text-center"
-                ><router-link to="/"  class="raleway"
-                  >Home</router-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-
-            <v-list-item style="background-color: black">
-              <v-list-item-title class="text-center"
-                ><a
-                  class="raleway"
-                  href="https://dirhamcrypto.io/whitepaper.pdf"
-                  >white paper</a
-                ></v-list-item-title
-              >
-            </v-list-item>
-
-            <v-list-item style="background-color: black">
-              <v-list-item-title class="text-center"
-                ><router-link
-                  to="/faq"
-                  target=""
-                  class="raleway"
-                  >FAQ</router-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-
-            
-            <v-list-item style="background-color: black">
-              <v-list-item-title class="text-center"
-                >
-                <router-link
-                  to="/about"
-                  target=""
-                  class="raleway"
-                  >About us</router-link
-                >
-                </v-list-item-title
-              >
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
-
-        
-      </v-card>
-    </div>
+    <MobileNavigation/>
 
     <div class="overflow-x-hidden mt-md-15">
       <v-row justify="center" class="mt-md-15">
@@ -234,7 +167,11 @@
 </template>
 
 <script>
+import MobileNavigation from '../components/MobileNavigation'
 export default {
+  components:{
+    MobileNavigation
+  },
   data() {
     return {
       screenSize: false,
