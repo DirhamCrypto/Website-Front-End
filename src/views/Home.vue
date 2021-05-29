@@ -17,75 +17,79 @@
         temporary
       >
         <v-list nav dense>
-        <v-list-item-group v-model="group">
-          <v-list-item to="./" style="background-color: black">
-            <v-list-item-title class="text-center">
-              <router-link to="./" class="raleway">Home</router-link>
-            </v-list-item-title>
-          </v-list-item>
+          <v-list-item-group v-model="group">
+            <v-list-item to="./" style="background-color: black">
+              <v-list-item-title class="text-center">
+                <router-link to="./" class="raleway">Home</router-link>
+              </v-list-item-title>
+            </v-list-item>
 
-          <v-list-item
-            @click="openTab('https://dirhamcrypto.io/whitepaper.pdf')"
-            style="background-color: black"
-          >
-            <v-list-item-title class="text-center"
-              ><a class="raleway" href="https://dirhamcrypto.io/whitepaper.pdf"
-                >white paper</a
-              ></v-list-item-title
+            <v-list-item
+              @click="openTab('https://dirhamcrypto.io/whitepaper.pdf')"
+              style="background-color: black"
             >
-          </v-list-item>
-
-          <v-list-item to="/faq" style="background-color: black">
-            <v-list-item-title class="text-center"
-              ><router-link to="/faq" target="" class="raleway"
-                >FAQ</router-link
-              ></v-list-item-title
-            >
-          </v-list-item>
-
-          <v-list-item to="/about" style="background-color: black">
-            <v-list-item-title class="text-center">
-              <router-link to="/about" target="" class="raleway"
-                >About Us</router-link
+              <v-list-item-title class="text-center"
+                ><a
+                  class="raleway"
+                  href="https://dirhamcrypto.io/whitepaper.pdf"
+                  >white paper</a
+                ></v-list-item-title
               >
-            </v-list-item-title>
-          </v-list-item>
-          <v-list-item
-            @click="openTab('https://twitter.com/DirhamCrypto')"
-            style="background-color: black"
-          >
-            <v-list-item-title class="text-center"
-              ><a class="raleway" href="https://twitter.com/DirhamCrypto"
-                >Twitter</a
-              ></v-list-item-title
-            >
-          </v-list-item>
-          <v-list-item
-            @click="('https://t.me/joinchat/TKDdLuLWsBBlYmE0')"
-            style="background-color: black"
-          >
-            <v-list-item-title class="text-center"
-              ><a class="raleway" href="https://t.me/joinchat/TKDdLuLWsBBlYmE0"
-                >Telegram</a
-              ></v-list-item-title
-            >
-          </v-list-item>
-          <v-list-item
-            @click="openTab('https://github.com/DirhamCrypto')"
-            style="background-color: black"
-          >
-            <v-list-item-title class="text-center"
-              ><a
-                href="https://github.com/DirhamCrypto"
-                target="_blank"
-                class="raleway"
+            </v-list-item>
+
+            <v-list-item to="/faq" style="background-color: black">
+              <v-list-item-title class="text-center"
+                ><router-link to="/faq" target="" class="raleway"
+                  >FAQ</router-link
+                ></v-list-item-title
               >
-                <v-icon color="primary">mdi-github</v-icon> Github
-              </a></v-list-item-title
+            </v-list-item>
+
+            <v-list-item to="/about" style="background-color: black">
+              <v-list-item-title class="text-center">
+                <router-link to="/about" target="" class="raleway"
+                  >About Us</router-link
+                >
+              </v-list-item-title>
+            </v-list-item>
+            <v-list-item
+              @click="openTab('https://twitter.com/DirhamCrypto')"
+              style="background-color: black"
             >
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
+              <v-list-item-title class="text-center"
+                ><a class="raleway" href="https://twitter.com/DirhamCrypto"
+                  >Twitter</a
+                ></v-list-item-title
+              >
+            </v-list-item>
+            <v-list-item
+              @click="('https://t.me/joinchat/TKDdLuLWsBBlYmE0')"
+              style="background-color: black"
+            >
+              <v-list-item-title class="text-center"
+                ><a
+                  class="raleway"
+                  href="https://t.me/joinchat/TKDdLuLWsBBlYmE0"
+                  >Telegram</a
+                ></v-list-item-title
+              >
+            </v-list-item>
+            <v-list-item
+              @click="openTab('https://github.com/DirhamCrypto')"
+              style="background-color: black"
+            >
+              <v-list-item-title class="text-center"
+                ><a
+                  href="https://github.com/DirhamCrypto"
+                  target="_blank"
+                  class="raleway"
+                >
+                  <v-icon color="primary">mdi-github</v-icon> Github
+                </a></v-list-item-title
+              >
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
       </v-navigation-drawer>
 
       <v-card-text>
@@ -333,8 +337,10 @@
             outlined
             readonly
             label="Market cap"
-            value="10,000,000 DHS"
-          ></v-text-field>
+            v-model="DHSSupply"
+          >
+            DHS
+          </v-text-field>
           <v-btn
             min-height="70"
             width="100%"
@@ -813,7 +819,7 @@
                 outlined
                 readonly
                 label="Market cap"
-                value="10,000,000 DHS"
+                v-model="DHSSupply"
               ></v-text-field>
               <v-text-field
                 class="font2rem"
@@ -1064,8 +1070,19 @@
 
 <script>
 // @ is an alias to /src
+const formatBalance = require("@/utils/utils").formatBalance;
+const etherscanPublicKey = require("@/utils/info.json").etherscanPublicKey;
+const axios = require("axios");
 const Web3 = require("web3");
-
+var web3;
+const ethereum = window.ethereum;
+if (typeof ethereum !== "undefined") {
+  web3 = new Web3(ethereum);
+} else if (typeof web3 !== "undefined") {
+  web3 = new Web3(web3.currentProvider);
+} else {
+  web3 = new Web3();
+}
 export default {
   name: "Home",
   watch: {
@@ -1077,6 +1094,7 @@ export default {
   data() {
     return {
       screenSize: false,
+      DHSSupply: String,
       screenHeigth: 0,
       drawer: false,
       group: null,
@@ -1104,18 +1122,26 @@ export default {
 
     this.screenHeigth = window.screen.height;
   },
+  mounted() {
+    this.supply();
+  },
   methods: {
+    supply() {
+      var params = {
+        module: "stats",
+        action: "tokensupply",
+        contractAddress: this.dirhamAddress,
+        apikey: etherscanPublicKey,
+      };
+      axios.get("https://api.etherscan.io/api", { params }).then((res) => {
+        this.DHSSupply = res.data.result;
+        this.DHSSupply = new Intl.NumberFormat().format(
+          formatBalance(web3.utils.fromWei(this.DHSSupply, "ether"))
+        ) + ' DHS';
+        console.log(this.DHSSupply);
+      });
+    },
     addToWallet: function (address, iSymbol) {
-      var web3;
-      const ethereum = window.ethereum;
-      if (typeof ethereum !== "undefined") {
-        web3 = new Web3(ethereum);
-      } else if (typeof web3 !== "undefined") {
-        web3 = new Web3(web3.currentProvider);
-      } else {
-        alert("No web3 provider");
-        return;
-      }
       var network = 0;
       const net = "mainnet";
       console.log(web3);
