@@ -3,17 +3,24 @@
     <div id="menu" class="d-md-flex d-none">
       <div class="row pt-2 align-items-center">
         <div class="col-2 offset-1">
+          <a href="/#">
+
           <v-img src="./assets/logo.png" alt="" max-width="200"></v-img>
+          </a>
         </div>
         <div class="col-5 offset-1">
           <ul class="text-primary nav">
             <li>
-              <router-link to="/" class="raleway text-subtitle-1">Home</router-link>
+              <router-link to="/" class="raleway text-subtitle-1"
+                >Home</router-link
+              >
             </li>
             <li>
-              <v-menu dark open-on-hover down >
+              <v-menu dark open-on-hover down>
                 <template v-slot:activator="{ on, attrs }">
-                  <a class="raleway text-subtitle-1" v-bind="attrs" v-on="on"> Resource </a>
+                  <a class="raleway text-subtitle-1" v-bind="attrs" v-on="on">
+                    Resource
+                  </a>
                 </template>
 
                 <v-list>
@@ -23,7 +30,8 @@
                         class="raleway text-subtitle-1"
                         target="_blank"
                         href="https://github.com/DirhamCrypto"
-                        > <v-icon>mdi-github</v-icon> Github</a
+                      >
+                        <v-icon>mdi-github</v-icon> Github</a
                       ></v-list-item-title
                     >
                   </v-list-item>
@@ -31,15 +39,23 @@
                     <v-list-item-title
                       ><a
                         class="raleway text-subtitle-1"
-                        href="https://dirhamcrypto.io/whitepaper.pdf"
-                        >Whitepaper</a
+                        href="https://dirhamcrypto.io/EnWhitepaper.pdf"
+                        >En Whitepaper</a
+                      ></v-list-item-title
+                    >
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-title
+                      ><a
+                        class="raleway text-subtitle-1"
+                        href="https://dirhamcrypto.io/ChWhitepaper.pdf"
+                        >Ch Whitepaper</a
                       ></v-list-item-title
                     >
                   </v-list-item>
                   <v-list-item>
                     <v-list-item-title
                       ><router-link
-                        
                         to="/faq"
                         target=""
                         class="raleway text-subtitle-1"
@@ -47,23 +63,55 @@
                       ></v-list-item-title
                     >
                   </v-list-item>
-                  
                 </v-list>
               </v-menu>
             </li>
             <li>
-              <router-link
-                
-                to="/about"
-                target=""
-                class="raleway text-subtitle-1"
+              <router-link to="/about" target="" class="raleway text-subtitle-1"
                 >About Us</router-link
               >
             </li>
             <li>
-              <a class="gary--text" href="https://etherscan.io/token/0x30365ed4ca8173013ad948b9842f34ac71d01f7c" target="_blank" >
-                <v-icon color="primary">mdi-ethereum</v-icon> Etherscan
-              </a>
+              <v-menu dark open-on-hover down>
+                <template v-slot:activator="{ on, attrs }">
+                  <a class="raleway text-subtitle-1" v-bind="attrs" v-on="on">
+                    <v-icon color="primary">mdi-network-outline</v-icon>
+                    Networks
+                  </a>
+                </template>
+
+                <v-list>
+                  <v-list-item>
+                    <v-list-item-title>
+                      <a
+                        class="gary--text"
+                        href="https://etherscan.io/token/0x30365ed4ca8173013ad948b9842f34ac71d01f7c"
+                        target="_blank"
+                      >
+                        <v-icon color="primary">mdi-ethereum</v-icon> Etherscan
+                      </a>
+                    </v-list-item-title>
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-title
+                      ><a
+                        class="raleway text-subtitle-1"
+                        href="https://bscscan.com/token/0x30365ed4ca8173013ad948b9842f34ac71d01f7c"
+                        >BSC Scan</a
+                      ></v-list-item-title
+                    >
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-title
+                      ><a
+                        class="raleway text-subtitle-1"
+                        href="https://tronscan.org/#/token20/TR22k2MS5GGsD6U2rbsHizk3BXGbGiufDN"
+                        >Tron Scan</a
+                      ></v-list-item-title
+                    >
+                  </v-list-item>
+                </v-list>
+              </v-menu>
             </li>
           </ul>
         </div>
@@ -84,10 +132,14 @@
               </li>
               <!-- <li><a class="white--text" href="">Media Contact</a></li> -->
               <li>
-                <a target="_blank" href="https://twitter.com/DirhamCrypto">Twitter</a>
+                <a target="_blank" href="https://twitter.com/DirhamCrypto"
+                  >Twitter</a
+                >
               </li>
               <li>
-                <a target="_blank" href="https://t.me/joinchat/TKDdLuLWsBBlYmE0">Telegram</a>
+                <a target="_blank" href="https://t.me/joinchat/TKDdLuLWsBBlYmE0"
+                  >Telegram</a
+                >
               </li>
               <!-- <li><a class="white--text" href="">Facebook</a></li> -->
               <!-- <li><a class="white--text" href="">Telegram</a></li> -->
@@ -97,15 +149,15 @@
           <v-col class="offset-1 offset-md-0" md="2" cols="10">
             <h6 class="primary--text">RESOURCES</h6>
             <ul>
+              <li><a href="#">Whitepaper</a></li>
+                <ul>
+                  <li>
+                    <a class="" href="/EnWhitepaper.pdf">En</a>
+                  </li>
+                  <li><a class="" href="/ChWhitepaper.pdf">Ch</a></li>
+                </ul>
               <li>
-                <a class="" href="/whitepaper.pdf">Whitepaper</a>
-              </li>
-              <li>
-                <router-link
-                  to="/faq"
-                  target=""
-                  >FAQ
-                </router-link>
+                <router-link to="/faq" target="">FAQ </router-link>
               </li>
               <li>
                 <a href="https://github.com/DirhamCrypto" target="_blank">
@@ -118,11 +170,7 @@
             <h6 class="primary--text">ABOUT</h6>
             <ul>
               <li>
-                <router-link
-                  to="/about"
-                  target=""
-                  >About Us</router-link
-                >
+                <router-link to="/about" target="">About Us</router-link>
               </li>
             </ul>
           </v-col>
@@ -149,7 +197,7 @@ export default {
       screenSize: true,
     };
   },
-  
+
   watch: {
     group() {
       this.drawer = false;
@@ -293,7 +341,7 @@ body {
 
   overflow: hidden;
 }
-li{
+li {
   color: white;
 }
 </style>

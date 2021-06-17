@@ -461,7 +461,7 @@
       <v-row class="" justify="center">
         <v-col class="text-center" cols="8">
           <v-btn class="my-5" outlined color="primary">
-            1 Dor = 0.098 USDT
+            1 Dor = {{ dorPrice }}  USDT
           </v-btn>
           <v-btn
             @click="addToWallet(dorAddress, 'DOR')"
@@ -972,7 +972,7 @@
                 <v-icon large color="white">mdi-ethereum</v-icon>
               </v-btn>
               <v-btn class="my-5 mx-3" outlined color="primary">
-                1 Dor = 0.098 USDT
+                1 Dor = {{ dorPrice }} USDT
               </v-btn>
               <v-btn
                 @click="addToWallet(dorAddress, 'DOR')"
@@ -1040,9 +1040,13 @@
             <v-col cols="2">
               <h6 class="primary--text">RESOURCES</h6>
               <ul>
-                <li>
-                  <a class="" href="/whitepaper.pdf">Whitepaper</a>
-                </li>
+                <li><a href="#">Whitepaper</a></li>
+                <ul>
+                  <li>
+                    <a class="" href="/EnWhitepaper.pdf">En</a>
+                  </li>
+                  <li><a class="" href="/ChWhitepaper.pdf">Ch</a></li>
+                </ul>
                 <li>
                   <router-link to="/faq" target="">FAQ </router-link>
                 </li>
@@ -1059,8 +1063,8 @@
                 <li>
                   <router-link to="/about" target="">About Us</router-link>
                 </li>
-              </ul>
-            </v-col>
+              </ul> </v-col
+            >En
           </v-row>
         </div>
       </div>
@@ -1071,7 +1075,8 @@
 <script>
 // @ is an alias to /src
 const formatBalance = require("@/utils/utils").formatBalance;
-const etherscanPublicKey = require("@/utils/info.json").etherscanPublicKey;
+const uniRouterABI = require("@/utils/uniRouterABI.json").abi;
+const { etherscanPublicKey, infuraKey } = require("@/utils/info.json");
 const axios = require("axios");
 const Web3 = require("web3");
 var web3;
@@ -1081,7 +1086,9 @@ if (typeof ethereum !== "undefined") {
 } else if (typeof web3 !== "undefined") {
   web3 = new Web3(web3.currentProvider);
 } else {
-  web3 = new Web3();
+  web3 = new Web3(
+    new Web3.providers.HttpProvider(`https://mainnet.infura.io/v3/${infuraKey}`)
+  );
 }
 export default {
   name: "Home",
@@ -1093,6 +1100,7 @@ export default {
 
   data() {
     return {
+      dorPrice: null,
       screenSize: false,
       DHSSupply: String,
       screenHeigth: 0,
@@ -1100,6 +1108,7 @@ export default {
       group: null,
       dirhamAddress: "0x30365ed4ca8173013ad948b9842f34ac71d01f7c",
       dorAddress: "0x53608f7258671fe607151e7df5efaf96e130f937",
+      uniRouter: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
       options: {
         // navigation: true,
         // showActiveTooltip: true,
@@ -1124,8 +1133,28 @@ export default {
   },
   mounted() {
     this.supply();
+    this.getDorPrice();
+    window.setInterval(this.getDorPrice, 10000);
   },
   methods: {
+    getDorPrice() {
+      let web3 = new Web3(
+        new Web3.providers.HttpProvider(
+          `https://mainnet.infura.io/v3/${infuraKey}`
+        )
+      );
+      var contract = new web3.eth.Contract(uniRouterABI, this.uniRouter);
+      contract.methods
+        .getAmountsOut(web3.utils.toWei("1", "ether"), [
+          this.dorAddress,
+          "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        ])
+        .call()
+        .then((res) => {
+          console.log(res[1]);
+          this.dorPrice = web3.utils.fromWei(res[1], "mwei");
+        });
+    },
     supply() {
       var params = {
         module: "stats",
@@ -1135,9 +1164,10 @@ export default {
       };
       axios.get("https://api.etherscan.io/api", { params }).then((res) => {
         this.DHSSupply = res.data.result;
-        this.DHSSupply = new Intl.NumberFormat().format(
-          formatBalance(web3.utils.fromWei(this.DHSSupply, "ether"))
-        ) + ' DHS';
+        this.DHSSupply =
+          new Intl.NumberFormat().format(
+            formatBalance(web3.utils.fromWei(this.DHSSupply, "ether"))
+          ) + " DHS";
         console.log(this.DHSSupply);
       });
     },
@@ -1191,6 +1221,10 @@ export default {
                     address: address,
                     symbol: iSymbol,
                     decimals: 18,
+                    image:
+                      address === this.dirhamAddress
+                        ? "https://dirhamcrypto.io/favicon.ico"
+                        : "",
                   },
                 },
                 id: Math.round(Math.random() * 100000),
