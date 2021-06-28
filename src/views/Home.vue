@@ -368,7 +368,7 @@
       <v-row class="pt-15 mb-5" justify="center">
         <v-col class="offset-1" cols="10">
           <h4 class="white--text text-h6">
-            Dirham is mainly used by the following three communities:
+            Dirham is mainly used by the following four communities:
           </h4>
         </v-col>
       </v-row>
@@ -871,7 +871,7 @@
         >
           <v-row class="pt-10" justify="center">
             <h4 class="white--text text-h6">
-              Dirham is mainly used by the following three communities:
+              Dirham is mainly used by the following four communities:
             </h4>
           </v-row>
           <v-row class="text-caption" justify="space-around">
@@ -989,19 +989,7 @@
         <v-row class="pt-15" justify="center">
           <h4 class="white--text">You can also EXCHANGE with these...</h4>
         </v-row>
-        <v-row class="mt-5" justify="center">
-          <div class="mb-10">
-            <a href="https://app.uniswap.org/#/swap" target="_blank">
-              <div width="200" class="hexgon">
-                <v-img
-                  class="childpic"
-                  width="100"
-                  src="../assets/p6/uniswap.png"
-                ></v-img>
-              </div>
-            </a>
-          </div>
-        </v-row>
+        
 
         <div v-if="screenSize" class="footer">
           <v-row>
@@ -1224,7 +1212,7 @@ export default {
                     image:
                       address === this.dirhamAddress
                         ? "https://dirhamcrypto.io/favicon.ico"
-                        : "",
+                        : "https://dirhamcrypto.io/dorlogo.png",
                   },
                 },
                 id: Math.round(Math.random() * 100000),
