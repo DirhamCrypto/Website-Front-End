@@ -25,13 +25,13 @@
             </v-list-item>
 
             <v-list-item
-              @click="openTab('https://dirhamcrypto.io/whitepaper.pdf')"
+              @click="openTab('https://dirhamcrypto.io/EnWhitepaper.pdf')"
               style="background-color: black"
             >
               <v-list-item-title class="text-center"
                 ><a
                   class="raleway"
-                  href="https://dirhamcrypto.io/whitepaper.pdf"
+                  href="/EnWhitepaper.pdf"
                   >white paper</a
                 ></v-list-item-title
               >
