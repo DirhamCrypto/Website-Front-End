@@ -154,7 +154,7 @@
         <v-row class="mt-4" justify="center">
           <v-col class="text-center" cols="8">
             <v-btn
-              @click="addToWallet(dirhamAddress, 'DHS')"
+              @click="addDHSToWallet"
               width="100%"
               class="page_one_btn kanit"
               >Add Dirham to wallet</v-btn
@@ -322,7 +322,7 @@
             outlined
             readonly
             label="Total bonds issued"
-            value="10"
+            value="505"
           >
           </v-text-field>
           <v-text-field
@@ -602,7 +602,7 @@
               <v-row class="my-n4" justify="center">
                 <v-col class="text-center" cols="5">
                   <v-btn
-                    @click="addToWallet(dirhamAddress, 'DHS')"
+                    @click="addDHSToWallet"
                     width="100%"
                     class="page_one_btn kanit"
                     >Add Dirham to wallet</v-btn
@@ -803,7 +803,7 @@
                 outlined
                 readonly
                 label="Total bonds issued"
-                value="10"
+                value="505"
               ></v-text-field>
               <v-text-field
                 class="font2rem"
@@ -1061,11 +1061,13 @@
 </template>
 
 <script>
+const addDHSToWallet = require("@/utils/web3").addDHSToWallet;
+const addNetwork = require("@/utils/web3").addNetwork;
+
+
 // @ is an alias to /src
-const formatBalance = require("@/utils/utils").formatBalance;
 const uniRouterABI = require("@/utils/uniRouterABI.json").abi;
-const { etherscanPublicKey, infuraKey } = require("@/utils/info.json");
-const axios = require("axios");
+const {  infuraKey } = require("@/utils/info.json");
 const Web3 = require("web3");
 var web3;
 const ethereum = window.ethereum;
@@ -1090,7 +1092,7 @@ export default {
     return {
       dorPrice: null,
       screenSize: false,
-      DHSSupply: String,
+      DHSSupply: '505086746.375913249',
       screenHeigth: 0,
       drawer: false,
       group: null,
@@ -1125,6 +1127,10 @@ export default {
     window.setInterval(this.getDorPrice, 10000);
   },
   methods: {
+    addDHSToWallet,
+    async addBSCToWallet() {
+      await addNetwork("0x38");
+    },
     getDorPrice() {
       let web3 = new Web3(
         new Web3.providers.HttpProvider(
@@ -1143,22 +1149,7 @@ export default {
           this.dorPrice = web3.utils.fromWei(res[1], "mwei");
         });
     },
-    supply() {
-      var params = {
-        module: "stats",
-        action: "tokensupply",
-        contractAddress: this.dirhamAddress,
-        apikey: etherscanPublicKey,
-      };
-      axios.get("https://api.etherscan.io/api", { params }).then((res) => {
-        this.DHSSupply = res.data.result;
-        this.DHSSupply =
-          new Intl.NumberFormat().format(
-            formatBalance(web3.utils.fromWei(this.DHSSupply, "ether"))
-          ) + " DHS";
-        console.log(this.DHSSupply);
-      });
-    },
+    
     addToWallet: function (address, iSymbol) {
       var network = 0;
       const net = "mainnet";
